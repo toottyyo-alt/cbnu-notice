@@ -12,15 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Python 설정
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: 라이브러리 설치
-        run: pip install requests beautifulsoup4
+      - name: Install packages
+        run: pip install requests
 
-      - name: 실행
+      - name: Run bot
         run: python main.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
